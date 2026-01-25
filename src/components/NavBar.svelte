@@ -5,10 +5,11 @@
 
 <nav>
     <ol>
-      <li><button on:click={() => showAboutMe = true}>also me</button></li>
+      <li><button on:click={() => showAboutMe = true}>more</button></li>
       <li><button on:click={() => showContact = true}>contact</button></li>
     </ol>
 </nav>
+
 
 {#if showAboutMe}
   <div class="modal">
