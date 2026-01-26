@@ -39,54 +39,54 @@
     
     // ----- Pointer events -----
     function onPointerDown(e: PointerEvent) {
-        if ((e.target as HTMLElement).closest('button')) return;
+      // ignore clicks/drags that start inside buttons or visualizer
+      if ((e.target as HTMLElement).closest('button') ||
+          (e.target as HTMLElement).closest('.no-carousel-drag')) return;
 
-        isDragging = true;
-        startX = e.clientX;
+      isDragging = true;
+      startX = e.clientX;
+      container.style.transition = 'none';
     }
+
 
     function onPointerMove(e: PointerEvent) { handleMove(e.clientX); }
     function onPointerUp(e: PointerEvent) { handleUp(); container.releasePointerCapture(e.pointerId); }
     
     // ----- Touch events for mobile -----
-    function onTouchStart(e: TouchEvent) { handleDown(e.touches[0].clientX); }
+    function onTouchStart(e: TouchEvent) {
+      if ((e.target as HTMLElement).closest('.no-carousel-drag')) return;
+      handleDown(e.touches[0].clientX);
+    }
     function onTouchMove(e: TouchEvent) { handleMove(e.touches[0].clientX); }
     function onTouchEnd() { handleUp(); }
     </script>
     
-    <div class="carousel-wrapper">
-      <div
-        class="carousel"
-        bind:this={container}
-        style="transform: translateX(-{index * 100}vw)"
-        on:pointerdown={onPointerDown}
-        on:pointermove={onPointerMove}
-        on:pointerup={onPointerUp}
-        on:pointerleave={onPointerUp}
-        on:touchstart={onTouchStart}
-        on:touchmove={onTouchMove}
-        on:touchend={onTouchEnd}
-      >
-        <slot />
-      </div>
-    
-      <!-- arrows -->
-      <button class="arrow left" on:click={() => goTo(index - 1)}>‹</button>
-      <button class="arrow right" on:click={() => goTo(index + 1)}>›</button>
-    
-      <!-- indicators -->
-      <div class="indicators">
-        {#each Array(total) as _, i}
-          <button
-            type="button"
-            class="indicator {i === index ? 'active' : ''}"
-            on:click={() => goTo(i)}
-            aria-label={`Go to slide ${i + 1}`}
-          ></button>   
-        {/each}
-      </div>
-    </div>
-    
+<div class="carousel-wrapper">
+  <div
+    class="carousel"
+    bind:this={container}
+    style="transform: translateX(-{index * 100}vw)"
+  >
+    <slot />
+  </div>
+
+  <!-- arrows -->
+  <button class="arrow left" on:click={() => goTo(index - 1)}>‹</button>
+  <button class="arrow right" on:click={() => goTo(index + 1)}>›</button>
+
+  <!-- indicators -->
+  <div class="indicators">
+    {#each Array(total) as _, i}
+      <button
+        type="button"
+        class="indicator {i === index ? 'active' : ''}"
+        on:click={() => goTo(i)}
+        aria-label={`Go to slide ${i + 1}`}
+      ></button>   
+    {/each}
+  </div>
+</div>
+
   
   <style>
     .carousel-wrapper {

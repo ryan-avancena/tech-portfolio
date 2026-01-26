@@ -1,0 +1,22 @@
+p {
+    font-size: 1rem;
+}
+
+#visualizer {
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  margin: 2rem auto;
+  background-color: #F5F5F5;
+  width: 90%;      /* center and leave small side gaps */
+  max-width: 1000px; 
+  height: 500px;
+}
+
+.text-content {
+    /* width: 60vw; */
+    margin-bottom: 100px;
+}
+
+h2 {
+    margin-top: 7vh;
+}

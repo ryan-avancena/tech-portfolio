@@ -4,7 +4,8 @@
         <div class="about-me">
             <h1>contact</h1>
             <p>ravancena.dev@gmail.com</p>
-            <p>ravancena.dev@gmail.com</p>
+            <p>ryanavancena</p>
+            <p>let's connect!</p>
 
             <h2>daily rotation</h2>
             <p>...</p>
