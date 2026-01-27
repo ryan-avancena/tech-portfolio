@@ -87,7 +87,7 @@ button {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
-
+  /* border: solid 2px red; */
   position: relative;
   z-index: 2;
 }

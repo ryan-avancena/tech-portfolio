@@ -152,17 +152,4 @@
     margin: 2rem 0;
     background-color: #F5F5F5; /* matches paper_bgcolor */
   }
-
-  h1, h2, p {
-    font-family: monospace;
-    color: #272525;
-  }
-
-  .heading {
-    display: flex;
-    /* border: 2px solid red; */
-    gap: 3rem;
-    /* flex-direction: row; */
-    align-items: center;
-  }
 </style>

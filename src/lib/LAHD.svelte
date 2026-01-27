@@ -1,6 +1,20 @@
-<h1>LAHD</h1>
+
+<script lang="ts">
+    import '$lib/info.css';
+</script>
+
+<div class="heading">
+  <h1>LAHD Systens Division</h1><h3>may 2025 - present</h3>
+</div>
+
+<hr>
+
 <h3><i>junior application developer</i></h3>
-<h3>may 2025 - present</h3>
+
+<img src="/images/LAHD.png" alt="lahd-logo" />
+
+<h2>MY ROLE</h2>
+
 <p>
     I work across the full stack using C#, .NET, Razor Pages, Blazor Server, and ServiceNow to build ITSM and
     administrative systems that support complex, data-driven workflows. My work typically spans
@@ -14,7 +28,7 @@
     operational and management decision-making.
 </p>
 
-<h2>MY ROLE</h2>
+<h2>MY WORK</h2>
 
 <p>
     More specifically, I specialize in creating secure, role-based user portals that guide users

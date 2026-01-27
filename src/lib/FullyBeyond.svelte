@@ -1,5 +1,7 @@
 <h1>FULLYBEYOND 2025</h1>
 
+<hr>
+
 <h3>CSUF's first ever, 24-hour virtual, designathon, open to all college students. With over 150 participants and over 20 projects submitted</h3>
 
 <h4>WHAT IS A DESIGNATHON?</h4>
