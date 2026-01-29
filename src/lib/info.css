@@ -25,9 +25,26 @@ h1, h2, p {
     align-items: center;
 }
 
+.title h2 {
+    font-size: 1.5rem;
+}
+
 .text-content {
     /* width: 60vw; */
     margin-bottom: 100px;
+}
+
+.image-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.image-container img {
+  width: 100%;
+  height: auto;        /* key: don’t force height */
+  object-fit: contain;
+  display: block;
 }
 
 h2 {
